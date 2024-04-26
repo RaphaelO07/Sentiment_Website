@@ -3,7 +3,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
  
-import login, analyser
+import login, analyser, moodpredictor
 st.set_page_config(
         page_title="Sentiment Analyser",
 )
@@ -26,8 +26,8 @@ class MultiApp:
         with st.sidebar:        
             app = option_menu(
                 menu_title='Sentiment Analyser',
-                options=['Login','Analyser'],
-                icons=['person-circle','chat-fill',],
+                options=['Login','Analyser', "Mood Predictor"],
+                icons=['person-circle','chat-fill',"bullseye"],
                 menu_icon='chat-text-fill',
                 default_index=0,
                 styles={
@@ -42,7 +42,9 @@ class MultiApp:
         if app == "Login":
             login.app()
         if app == "Analyser":
-            analyser.app()    
+            analyser.app()
+        if app == "Mood Predictor":
+            moodpredictor.app()      
              
     run()            
          
