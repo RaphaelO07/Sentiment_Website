@@ -156,7 +156,7 @@ def app():
                         bbox=bbox_props, zorder=0, va='center')
 
                 emotion = list(grouped_emotions.keys())[i]
-                probability = list(grouped_emotions.values())[i]/len(answers)
+                probability = list(grouped_emotions.values())[i]/(len(answers) - answers.count(''))
                 label_text = f"{emotion} {probability*100:.1f}%"
                 ax.annotate(label_text, xy=(x, y), xytext=(1.5*x, 1.2*y),
                             horizontalalignment=horizontalalignment, **kw)
